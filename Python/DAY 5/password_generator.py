@@ -28,8 +28,16 @@ for z in range(0, nr_numbers):
 
 join_all = l+s+n
 
+suffle = []
+for x in join_all:
+    rndom_ch = random.choice(join_all)
+    suffle.append(rndom_ch)
+# print(suffle)
+
 join_F_all= "".join(join_all)
 print(f"Easy Password is: {join_F_all}")
+suffle = "".join(suffle)
+print(f"Hard Password is: {suffle}")
 
 
 
