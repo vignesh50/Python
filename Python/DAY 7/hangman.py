@@ -1,3 +1,60 @@
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 import random
 
 word_list = ["aardvark", "baboon", "camel"]
@@ -14,12 +71,6 @@ blank = []
 for x in range(lenOfWord):
     blank.append("_")
 
-
-def life1():
-    if life > 0:
-        return True
-    else:
-        return False
 
 print(f"your life has: {life}")
 option = True
@@ -42,10 +93,15 @@ while option:
     else:
         life -= 1
         print(f"Oh No!! \nyour life left: {life}")
-    if life < 0:
+
+    if life == 0:
+        print("You Lost Life!!!")
         option = False
-
+    if '_' not in blank:
+        print("You Win")
+        option = False
+    
+    print(stages[life])
+    
 print(f"Final result: {blank}")
-
-
 
