@@ -33,8 +33,9 @@ def encrypt(text, shift):
 
                 print(f"Out of Index reset number")
                 print(f"Index Cover: {alphabet[out_of_index]}")
-                cipher_text.append(alphabet[out_of_index])
-                out_of_index += 1
+                out_of_index += shift
+                cipher_text.append(alphabet[out_of_index-1])
+
         else:
             cipher_text.append(letter)
 
